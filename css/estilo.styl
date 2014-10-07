@@ -100,13 +100,6 @@ select
 	width 100%
 
 #FormularioListar
-	
-	#cargar
-		text-align left
-		padding 0.5em
-
-		table
-			background-color green
 
 	#Caracteristicarc
 	#Caracteristica
@@ -114,16 +107,27 @@ select
 	#Programa
 	#Indicador
 	#Factor
+	.form-group
 		position relative
 		padding 0.5em
 		text-align left
+
+		&.descripcion
+			height 66px
 			
 		.select
+		.subir
 			width 50%
 			position absolute
 			top 5px
 			left 200px
 			
+			.inpNombre
+				width 300px
+
+			textarea
+				width 651px
+				resize none
 
 	#Caracteristicarc
 	#Caracteristica
@@ -345,10 +349,20 @@ select
 		#Indicador
 		#Factor
 		#Facultad
+		.form-group
+			
+			&.descripcion
+				height 87px
 			
 			.select
+			.subir
+			
 				display block
 				left 0
 				position relative
 				top 5px
 				width 100%
+
+				textarea
+					width 98%
+					resize none

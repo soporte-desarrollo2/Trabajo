@@ -23,22 +23,30 @@
                     <select name="caracteristica" id="sel_caracteristicarc"></select>
                 </div>
             </div>
-            <div class="cargar">
-                	<table>
-                		<tr>
-                			<td><label for="nombre">Ingrese el nombre soporte:</label></td>
-                			<td><input type="text" name="nombre" required></td>
-                		</tr>
-                		<tr>
-                			<td><label for="descripcion">Ingrese descripcion:</label></td>
-                			<td><textarea rows='1' type='text' name='descripcion' required></textarea></td>
-                		</tr>
-                		<tr>
-                			<td><label for="archivo">Subir archivo:</label></td>
-                			<td><input type="file" name="archivo" required></td>
-                		</tr>
-                		<tr><td><input type="submit" value="enviar"></td></tr>
-            		</table>
+            <div class="informacion">
+                <div class="form-group">
+                    <label for="nombre">Nombre soporte:</label>
+                    <div class="subir">
+                        <input type="text" name="nombre" placeholder="Ingrese nombre del soporte" class="inpNombre" required>
+                    </div>
+                </div>
+                <div class="form-group descripcion">
+                    <label for="descripcion">Ingrese descripcion:</label>
+                    <div class="subir">
+                        <textarea rows='4' type='text' name='descripcion' placeholder="Ingrese Una descripcion" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="archivo">Subir archivo:</label>
+                    <div class="subir">
+                        <input type="file" name="archivo" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="subir">
+                        <input type="submit" value="enviar">
+                    </div>
+                </div>
             </div>
         </form>
     </article>

@@ -39,12 +39,12 @@
                 <div class="form-group">
                     <label for="archivo">Subir archivo:</label>
                     <div class="subir">
-                        <input type="file" name="archivo" required>
+                        <input type="file" id="archivo" name="archivo" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="subir">
-                        <input type="submit" value="enviar">
+                        <input type="submit" id="enviar" value="enviar">
                     </div>
                 </div>
             </div>

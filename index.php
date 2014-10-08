@@ -87,6 +87,6 @@
 		<em>Contacto:</em> jegiraldo@elpoli.edu.co<br>
 	</footer>
 	<script src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/listar.js"></script>>
+	<script src="js/listar.js"></script>
 </body>
 </html>	

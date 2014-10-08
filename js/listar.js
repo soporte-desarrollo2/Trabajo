@@ -5,6 +5,8 @@ $(document).on('ready',function() {
     var IDf =1;
     var idI =1;
     var idF = $("#sel_facultad").val();
+    
+    //mostrar el select Facultad
     if (idF==0){
         $.post('/Trabajo/php/consultas.php', {op: 0 })
         .done(function(data) {
@@ -40,21 +42,12 @@ $(document).on('ready',function() {
     $("#sel_caracteristicarc").change(function(){
         //$(".datagrid").slideToggle("slow","linear")
         idC = $("#sel_caracteristicarc").val();
-        if (idC==0){
-            $(".datagrid").slideUp("slow","linear")
-            $(".datagrid").css({
-                display: 'none'
-            });
-        }else{
-             $(".datagrid").slideDown("slow","linear")
-            $(".datagrid").css({
-                display: 'block'
-            });
-        }
+        $(".datagrid").slideDown("slow","linear")
         $.post("/Trabajo/php/consultas.php", { op: 4, id: idC })
         .done(function(data){
             $(".tbody").html(data);
         });
+        $(".informacion").slideDown('slow',"linear");
         
     });
 

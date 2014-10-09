@@ -72,21 +72,16 @@ $(document).on('ready',function() {
     $("#sel_indicador").change(function(){
         //$(".datagrid").slideToggle("slow","linear")
         idI = $("#sel_indicador").val();
-        if (idC==0){
-            $(".datagrid-autoevaluacion").slideUp("slow","linear")
-            $(".datagrid-autoevaluacion").css({
-                display: 'none'
-            });
-        }else{
-             $(".datagrid-autoevaluacion").slideDown("slow","linear")
-            $(".datagrid-autoevaluacion").css({
-                display: 'block'
-            });
-        }
+        $(".datagrid-autoevaluacion").slideDown("slow","linear"),
         $.post("/Trabajo/php/consultas.php", { op: 7, id: idI })
         .done(function(data){
             $(".tbody").html(data);
         });
         
+    });
+
+    $(':file').change(function(){
+        //alert("entro")
+        var file = $('#archivo').files[0];
     });
 });

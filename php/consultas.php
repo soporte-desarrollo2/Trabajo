@@ -19,6 +19,8 @@
 		$cons->indicador();
 	}elseif($op==7){
 		$cons->mostrarTablaAuto();
+	}elseif($op==8){
+		$cons->InsertarArchivoRegistro();
 	}
 
 	class Consultas {
@@ -94,6 +96,12 @@
 					 echo "<tr><td><a href=".$registro['ubicacion']." target='_blank'>".$registro['nombre']."</a>
 			                     </td><td>".$registro['descripcion']."</td><td>".$registro['subio']."</td></tr>";
 				}
+			}
+
+			function InsertarArchivoRegistro(){
+				$sql="Insert into sorca_soporte (nombre,descripcion,ubicacion,idprograma,idcaracteristicarc,subio)
+                                    values ('".$_POST['Soporte']."','".$_POST['Descripcion']."','".$destino."',".$Select2.",".$Select3.",".$_SESSION['Nombre'].")";
+
 			}
 	}
 ?>

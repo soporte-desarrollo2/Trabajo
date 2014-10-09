@@ -27,13 +27,13 @@
                 <div class="form-group">
                     <label for="nombre">Nombre soporte:</label>
                     <div class="subir">
-                        <input type="text" name="nombre" placeholder="Ingrese nombre del soporte" class="inpNombre" required>
+                        <input type="text" id="Nom" name="nombre" placeholder="Ingrese nombre del soporte" class="inpNombre" required>
                     </div>
                 </div>
                 <div class="form-group descripcion">
                     <label for="descripcion">Ingrese descripcion:</label>
                     <div class="subir">
-                        <textarea rows='4' type='text' name='descripcion' placeholder="Ingrese Una descripcion" required></textarea>
+                        <textarea rows='4' type='text' name='descripcion' id="descripcion" placeholder="Ingrese Una descripcion" required></textarea>
                     </div>
                 </div>
                 <div class="form-group">
@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                     <div class="subir">
-                        <input type="submit" id="enviar" value="enviar">
+                        <input type="button" id="enviar" value="enviar">
                     </div>
                 </div>
             </div>

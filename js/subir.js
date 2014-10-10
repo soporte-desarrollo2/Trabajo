@@ -19,18 +19,15 @@ $(document).on('ready',function() {
 		if (ban==0){
 			$('#archivo').val('');
 		}
-		//console.log(nombreFile);
-		///console.log(ban)
-
 	});
 
-	$(':button').click(function(){
+	$("form").submit(function(){
 		var formData=new FormData($('#FormularioListar')[0]);
 		var Nombre = $('#Nom').val();
 		var Descripcion = $('#descripcion').val();
 		var idPrograma = $('#sel_programa').val();
 		var idCaracteristica = $('#sel_caracteristicarc').val();
-		var Destino = "files/"+file;
+		var Destino = "files/"+nombreFile;
 		
 		//subir archivo
 		$.ajax({
@@ -50,7 +47,6 @@ $(document).on('ready',function() {
            // },
             //una vez finalizado correctamente
             success: function(data){
-                //message = $("<span class='success'>La imagen ha subido correctamente.</span>");
                 alert("subido con exito");
             },
             //si ha ocurrido un error
@@ -58,8 +54,10 @@ $(document).on('ready',function() {
                 alert("Ha ocurrido un error");
             }
         });
-
-        $.post('/Trabajo/php/consultas.php', {op: 8, nombre: Nombre, Descripcion: Descripcion , ubicacion: Destino, idP: idPrograma, idC: idCaracteristica,subio: 1 }
-
+        $.post('/Trabajo/php/consultas.php', {op: 8, nombre: Nombre, Descripcion: Descripcion , ubicacion: Destino, idP: idPrograma, idC: idCaracteristica,subio: 1 })
+        .done(function(){
+        	alert("archivo insertado correctamente");
+        });
     });
+
  });

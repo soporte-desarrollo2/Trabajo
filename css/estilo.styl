@@ -94,10 +94,7 @@ section
 
 		.tutiloListar
 				font-size 18px
-				color orange
-
-select
-	width 100%
+				font-weight bold
 
 #FormularioListar
 
@@ -125,9 +122,24 @@ select
 			.inpNombre
 				width 300px
 
+			select
+				width 50%
+
 			textarea
 				width 651px
 				resize none
+
+	.subir
+		position relative
+
+		.mensaje
+			background #272822
+			border-radius 0.5em
+			color white
+			left 335px
+			padding 5px
+			position absolute
+			top -2px
 
 	#Caracteristicarc
 	#Caracteristica
@@ -263,6 +275,9 @@ select
 
 @media screen and (max-width:800px)
 
+	select
+		width 100%
+
 	#menu
 		left: -110%;
 		width: 100%;
@@ -363,6 +378,15 @@ select
 				position relative
 				top 5px
 				width 100%
+
+				#archivo
+					width 100%
+
+				.inpNombre
+					width 100%
+				select
+					width 100%
+
 
 				textarea
 					width 98%

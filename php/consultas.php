@@ -22,7 +22,7 @@
 	}elseif($op==8){
 		$cons->InsertarArchivoRegistro();
 	}
-
+	
 	class Consultas {
 			function facultad (){
 				$result=ConsultarSql('SELECT * FROM sorca_facultad');
@@ -81,7 +81,7 @@
 
 			function indicador(){
 				$idCar = $_POST["id"];
-				$result = ConsultarSql("SELECT * FROM sorca_indicador where idcaracteristica='$idCar'");
+				$result = ConsultarSql("SELECT * FROM sorca_indicador WHERE idcaracteristica='$idCar'");
 				echo '<option value="0" selected>Seleccione Indicador</option>';
 				while($registro = mysqli_fetch_array($result)){
 					echo "<option value='".$registro["idIndicador"]."'>".utf8_encode($registro["nombre"])."</option>";
@@ -91,7 +91,7 @@
 
 			function mostrarTablaAuto(){
 				$idI = $_POST["id"];
-				$result = ConsultarSql("SELECT * FROM sorca_soporte where idIndicador='$idI'");
+				$result = ConsultarSql("SELECT * FROM sorca_soporte WHERE idIndicador='$idI'");
 				while($registro = mysqli_fetch_array($result)){
 					 echo "<tr><td><a href=".$registro['ubicacion']." target='_blank'>".$registro['nombre']."</a>
 			                     </td><td>".$registro['descripcion']."</td><td>".$registro['subio']."</td></tr>";
@@ -99,9 +99,8 @@
 			}
 
 			function InsertarArchivoRegistro(){
-				$sql="Insert into sorca_soporte (nombre,descripcion,ubicacion,idprograma,idcaracteristicarc,subio)
-                                    values ('".$_POST['Soporte']."','".$_POST['Descripcion']."','".$destino."',".$Select2.",".$Select3.",".$_SESSION['Nombre'].")";
-
+				$result=Insertar("INSERT INTO sorca_soporte (nombre,descripcion,ubicacion,idprograma,idcaracteristicarc,subio)
+                                    VALUES ('".$_POST['nombre']."','".$_POST['Descripcion']."','".$_POST['ubicacion']."',".$_POST['idP'].",".$_POST['idC'].",".$_POST['subio'].")");
 			}
 	}
 ?>

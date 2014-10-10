@@ -88,6 +88,6 @@
 	</footer>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/listar.js"></script>
-	<script src="subir.js"></script>
+	<script src="js/subir.js"></script>
 </body>
 </html>	

@@ -77,11 +77,5 @@ $(document).on('ready',function() {
         .done(function(data){
             $(".tbody").html(data);
         });
-        
-    });
-
-    $(':file').change(function(){
-        //alert("entro")
-        var file = $('#archivo').files[0];
     });
 });

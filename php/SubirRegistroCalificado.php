@@ -40,11 +40,12 @@
                     <label for="archivo">Subir archivo:</label>
                     <div class="subir">
                         <input type="file" id="archivo" name="archivo" required>
+                        <div class="mensaje">hola como tas</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="subir">
-                        <input type="button" id="enviar" value="enviar">
+                        <input type="submit" id="enviar" value="enviar">
                     </div>
                 </div>
             </div>

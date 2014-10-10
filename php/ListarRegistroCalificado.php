@@ -2,7 +2,7 @@
     <article class="listar">
         <span class='tutiloListar'>LISTAR DOCUMENTACION - REGISTRO CALIFICADO</span>
         <p>
-        <form action="" name="form1" id="FormularioListar calificado" method="POST">
+        <form action="" name="form1" id="FormularioListar" method="POST">
             <div id="Facultad">
                 <label for="sel_facultad">Seleccione Facultad:</label>
                 <div class="select">

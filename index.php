@@ -16,7 +16,7 @@
 			$titulo = ": Listar Autoevaluacion";
 			break;
 		case "subirautoevalucion":
-			$contenido = "php/SubirAutoevalucion.php";
+			$contenido = "php/SubirAutoevaluacion.php";
 			$titulo = ": Subir AutoEvaluacion";
 			break;
 		default:
@@ -69,7 +69,7 @@
 			<li><a href="#">Autoevaluacion</a>
 				<ul>
 					<li><a href="?op=listarautoevalucion">Listar Registro</a></li>
-					<li><a href="#">Subir Registro</a></li>
+					<li><a href="?op=subirautoevalucion">Subir Registro</a></li>
 				</ul>
 			</li>
 			<li><a href="#">Planes de mejoramiento</a></li>

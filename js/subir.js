@@ -1,11 +1,19 @@
+;
 $(document).on('ready',function() {
 	var extensiones = [{ext: 'doc'},{ext: 'docx'},{ext:'pdf'}];
 	var ban = 0;
 	var nombreFile;
 	var extension;
 	var file;
-	
+	var formData;
+	/*var Nombre = $('#Nom').val();
+	var Descripcion = $('#descripcion').val();
+	var idPrograma = $('#sel_programa').val();
+	var idCaracteristica = $('#sel_caracteristicarc').val();
+	var Destino = "files/"+nombreFile;
+*/
 	$(':file').change(function(){
+		formData =new FormData($('#FormularioListar')[0]);
 		ban = 0;
 		file = $('#archivo')[0].files[0];
 		nombreFile = file.name;
@@ -18,46 +26,46 @@ $(document).on('ready',function() {
 
 		if (ban==0){
 			$('#archivo').val('');
+		}else{
+			$('#enviar').click(function(event){
+				
+				//subir archivo
+				console.log(formData);
+				$.ajax({
+		            url: 'php/upload.php',  
+		            type: 'POST',
+		            // Form data
+		            //datos del formulario
+		            data: formData,
+		            //necesario para subir archivos via ajax
+		            cache: false,
+		            contentType: false,
+		            processData: false,
+		            //mientras enviamos el archivo
+		           // beforeSend: function(){
+		                //message = $("<span class='before'>Subiendo la imagen, por favor espere...</span>");
+		                //showMessage(message)        
+		           // },
+		            //una vez finalizado correctamente
+		            success: function(data){
+		                alert("subido con exito");
+		            },
+		            //si ha ocurrido un error
+		            error: function(){
+		                alert("Ha ocurrido un error");
+		            }
+		            //event.preventDefault();
+		        });
+
+		        /*
+		        $.post('/Trabajo/php/consultas.php', {op: 8, nombre: Nombre, Descripcion: Descripcion , ubicacion: Destino, idP: idPrograma, idC: idCaracteristica,subio: 1 })
+		        .done(function(data){
+		        	console.log(data);
+		        	alert("archivo insertado correctamente");
+		        });*/
+	        });
+		
 		}
 	});
-
-	$("form").submit(function(){
-		var formData=new FormData($('#FormularioListar')[0]);
-		var Nombre = $('#Nom').val();
-		var Descripcion = $('#descripcion').val();
-		var idPrograma = $('#sel_programa').val();
-		var idCaracteristica = $('#sel_caracteristicarc').val();
-		var Destino = "files/"+nombreFile;
-		
-		//subir archivo
-		$.ajax({
-            url: '/Trabajo/php/upload.php',  
-            type: 'POST',
-            // Form data
-            //datos del formulario
-            data: formData,
-            //necesario para subir archivos via ajax
-            cache: false,
-            contentType: false,
-            processData: false,
-            //mientras enviamos el archivo
-           // beforeSend: function(){
-                //message = $("<span class='before'>Subiendo la imagen, por favor espere...</span>");
-                //showMessage(message)        
-           // },
-            //una vez finalizado correctamente
-            success: function(data){
-                alert("subido con exito");
-            },
-            //si ha ocurrido un error
-            error: function(){
-                alert("Ha ocurrido un error");
-            }
-        });
-        $.post('/Trabajo/php/consultas.php', {op: 8, nombre: Nombre, Descripcion: Descripcion , ubicacion: Destino, idP: idPrograma, idC: idCaracteristica,subio: 1 })
-        .done(function(){
-        	alert("archivo insertado correctamente");
-        });
-    });
 
  });

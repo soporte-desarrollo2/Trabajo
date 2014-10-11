@@ -77,5 +77,6 @@ $(document).on('ready',function() {
         .done(function(data){
             $(".tbody").html(data);
         });
+        $(".informacion").slideDown('slow',"linear");
     });
 });

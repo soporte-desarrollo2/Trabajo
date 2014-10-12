@@ -6,7 +6,7 @@
 	    //comprobamos si el archivo ha subido
 	    if ($file && move_uploaded_file($_FILES['archivo']['tmp_name'],"../Files/".utf8_decode($file)))
 	    {
-	       sleep(3);//retrasamos la petición 3 segundos
+	       sleep(1);//retrasamos la petición 3 segundos
 	    }
 	}else{
 	    throw new Exception("Error Processing Request", 1);  

@@ -39,25 +39,27 @@
                 <div class="form-group">
                     <label for="nombre">Nombre soporte:</label>
                     <div class="subir">
-                        <input type="text" id="Nom" name="nombre" placeholder="Ingrese nombre del soporte" class="inpNombre" required>
+                        <input type="text" id="Nom" name="nombre" placeholder="Ingrese nombre del soporte"  autocomplete="off" class="inpNombre" required>
+                        <span id="NomS" class="mensaje">Complete este campo</span>
                     </div>
                 </div>
                 <div class="form-group descripcion">
                     <label for="descripcion">Ingrese descripcion:</label>
                     <div class="subir">
-                        <textarea rows='4' type='text' name='descripcion' id="descripcion" placeholder="Ingrese Una descripcion" required></textarea>
+                        <textarea rows='4' type='text' name='descripcion' id="descripcion" autocomplete="off" placeholder="Ingrese Una descripcion" required></textarea>
+                        <span id="DesS"class="mensaje des">Complete este campo</span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="archivo">Subir archivo:</label>
                     <div class="subir">
-                        <input type="file" id="archivo" name="archivo" required>
-                        <div class="mensaje">hola como tas</div>
-                    </div>
+                        <input type="file" autocomplete="off" id="archivo" name="archivo" required>
+                        <span id="Arc" class="mensaje">Archivo No Valido</span>
+                    </div>                          
                 </div>
                 <div class="form-group">
                     <div class="subir">
-                        <input type="submit" id="enviar" value="enviar">
+                        <input type="button" id="enviar" value="enviar">
                     </div>
                 </div>
             </div>

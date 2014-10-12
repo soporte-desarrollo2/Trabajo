@@ -17,7 +17,7 @@
 
     function Insertar($StrSql){
         $conexion=conectar();
-        $res=mysqli_query($conexion,$StrSql) or die(mysqli_error());
+        $res=mysqli_query($conexion,$StrSql) or die(mysql_error());
         mysqli_close($conexion);
         return true;
     }

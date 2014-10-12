@@ -28,7 +28,6 @@
                     <label for="nombre">Nombre soporte:</label>
                     <div class="subir">
                         <input type="text" id="Nom" name="nombre" placeholder="Ingrese nombre del soporte" class="inpNombre"  autocomplete="off" required>
-                        <span id="NomS" class="mensaje">Complete este campo</span>
                     </div>
                 </div>
                 <div class="form-group descripcion">
@@ -47,7 +46,7 @@
                 </div>
                 <div class="form-group">
                     <div class="subir">
-                        <input type="button" id="enviar" value="enviar">
+                        <input type="submit" id="enviar" value="enviar">
                     </div>
                 </div>
             </div>

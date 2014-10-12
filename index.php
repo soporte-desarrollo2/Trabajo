@@ -44,7 +44,7 @@
 <body>
 	<header>
 		<div class="logo">
-			<img src="imagen/logo.png" alt="logo siwebsi">
+			<a href="#"><img id="siwebsi" src="imagen/logo.png" alt="logo siwebsi"></a>
 		</div>
 		<div class="titular">
 			<h1 class="titulo">SORCA <br>	
@@ -88,6 +88,6 @@
 	</footer>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/listar.js"></script>
-	<script src="js/subir.js"></script>
+	<script src="js/subir2.js"></script>
 </body>
 </html>	

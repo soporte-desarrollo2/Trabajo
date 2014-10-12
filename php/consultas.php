@@ -2,7 +2,9 @@
  	include ("Conexion.php");
 	$cons = new Consultas();
 
+
 	$op = $_POST["op"];
+	
 	if ($op==0){
 		$cons->facultad();
 	}elseif ($op==1) {
@@ -99,8 +101,14 @@
 			}
 
 			function InsertarArchivoRegistro(){
-				$result=Insertar("INSERT INTO sorca_soporte (nombre,descripcion,ubicacion,idprograma,idcaracteristicarc,subio)
+				$opcionInsertar = $_POST['opI'];
+				if ($opcionInsertar==1){
+					$result=Insertar("INSERT INTO sorca_soporte (nombre,descripcion,ubicacion,idprograma,idcaracteristicarc,subio)
                                     VALUES ('".$_POST['nombre']."','".$_POST['Descripcion']."','".$_POST['ubicacion']."',".$_POST['idP'].",".$_POST['idC'].",".$_POST['subio'].")");
+				}else{
+					$result=Insertar('INSERT INTO sorca_soporte (nombre, descripcion, ubicacion, idPrograma, idIndicador, subio) 
+							VALUES ("'.$_POST['nombre'].'", "'.$_POST['Descripcion'].'", "'.$_POST['ubicacion'].'",'.$_POST['idP'].',"'.$_POST['idI'].'" ,'.$_POST['subio'].')');
+				}
 			}
 	}
 ?>

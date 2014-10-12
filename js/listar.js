@@ -5,6 +5,19 @@ $(document).on('ready',function() {
     var IDf =1;
     var idI =1;
     var idF = $("#sel_facultad").val();
+
+    function GetURLParameter(sParam){
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++) 
+        {
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] == sParam) 
+            {
+                return sParameterName[1];
+            }
+        }
+    };
     
     //mostrar el select Facultad
     if (idF==0){
@@ -26,16 +39,20 @@ $(document).on('ready',function() {
 
     //mostrar campo seleccion Caracteristica
     $("#sel_programa").change(function(){
-        $("#Factor").slideDown("slow","linear")
-        $.post("/Trabajo/php/consultas.php", { op: 2 })
-        .done(function(data){
+        var opcion = GetURLParameter('op');
+        if(opcion=='subirautoevalucion' || opcion=='listarautoevalucion'){
+            $("#Factor").slideDown("slow","linear")
+            $.post("/Trabajo/php/consultas.php", { op: 2 })
+            .done(function(data){
             $("#sel_factor").html(data);
-        });//done
-        $("#Caracteristica").slideDown("slow","linear")
-        $.post("/Trabajo/php/consultas.php",{ op: 3})
-        .done(function(data){
-            $("#sel_caracteristicarc").html(data);
-        });
+            });//done
+        }else{
+            $("#Caracteristica").slideDown("slow","linear")
+            $.post("/Trabajo/php/consultas.php",{ op: 3})
+            .done(function(data){
+                $("#sel_caracteristicarc").html(data);
+            });
+        }
     });
 
     //mostrar campo datagrid
